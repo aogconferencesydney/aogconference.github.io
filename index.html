@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Background with Image</title>
+    <style>
+        @font-face {
+            font-family: 'Made Outer Sans';
+            src: url('/Users/thesyaevania/Downloads/made_outer_sans/MADE Outer Sans Medium PERSONAL USE.otf');
+            /* Add other font formats as needed */
+        }
+        @font-face {
+            font-family: 'BWModelica';
+            src: url('/Users/thesyaevania/Library/Fonts/Bw Modelica/otf/BwModelica-Black.otf');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #5e33bf; /* Purple background color */
+            color: #ffffff; /* Text color to be visible on the background */
+            font-family: 'Made Outer Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .content {
+            z-index: 2;
+            padding: 0px;
+            /* max-width: 800px; */
+        }
+        
+        .content h1 {
+            font-size: 70px;
+        }
+        .content h2 {
+            font-size: 40px;
+        }
+        .content img {
+            width: 100%; /* Make the image width 100% of its container */
+            display: block; /* Remove any default inline styles that might affect spacing */
+            margin: 0 auto; /* Center the image within its container */
+        }
+        .rounded-rectangle {
+            width: 400px; /* Adjust the width as needed */
+            height: 50x; /* Adjust the height as needed */
+            padding: 20px;
+            background-color: #f35c1e; /* Adjust the background color as needed */
+            border-radius: 15px; /* Adjust the border-radius to control the roundness of the corners */
+            margin: 5px;
+            margin-bottom: 40px; /* Adjust the margin as needed */
+        }
+        .footer {
+            font-family: 'BWModelica', sans-serif;
+            font-size: 5px;
+        }
+        #countdown {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <div class="content">
+        <img src="https://lh3.googleusercontent.com/pw/ABLVV86gssgqdx3gQgR5XDPXI12UIKakndLaGh4vtP-awXu26vwJxyMUDAghOfv1TICtPalQEhYrVnmjkGRpwduE8VxIw67yEi5tRHm-5ubu-cJrbUPxamc=w2400" alt="AOG Conference Logo" class="background-image">
+        <h1>COMING SOON!</h1>
+        <h2>Registration will start in</h2>
+    </div>
+    <div class="rounded-rectangle">
+        <div id="countdown"></div>
+
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jan 27, 2024 00:00:00").getTime();
+
+                // Update the countdown every 1 second
+                var countdownInterval = setInterval(function() {
+                    // Get the current date and time
+                    var now = new Date().getTime();
+
+                    // Calculate the remaining time
+                    var distance = countDownDate - now;
+
+                    // Calculate days, hours, minutes, and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the countdown in the "countdown" div
+                    document.getElementById("countdown").innerHTML = days + "d : " + hours + "h : "
+                    + minutes + "m : " + seconds + "s ";
+
+                    // If the countdown is over, display a message
+                    if (distance < 0) {
+                        clearInterval(countdownInterval);
+                        document.getElementById("countdown").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            </script>
+            </div>
+    <div>
+
+    </div>
+    <div class="footer">
+        <p>@rosc<strong>sydney</strong></p>
+    </div>
+</body>
+</html>
